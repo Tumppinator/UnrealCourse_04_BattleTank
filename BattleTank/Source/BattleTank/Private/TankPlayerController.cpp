@@ -5,7 +5,7 @@
 
 void ATankPlayerController::BeginPlay()
 {
-	Super::BeginPlay(); 
+	Super::BeginPlay();
 
 	auto ControlledTank = GetControlledTank();
 	if (!ControlledTank)
@@ -39,7 +39,7 @@ void ATankPlayerController::AimTowardsCrosshair()
 		GetControlledTank()->AimAt(HitLocation);
 	}
 
-	
+
 }
 
 // Get world location of line trace through crosshair, true if hits landscape
@@ -68,7 +68,7 @@ bool ATankPlayerController::GetLookDirection(FVector2D ScreenLocation, FVector& 
 
 	return DeprojectScreenPositionToWorld(ScreenLocation.X, ScreenLocation.Y, CameraWorldLocation, LookDirection);
 
-	
+
 }
 
 bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const
@@ -86,7 +86,7 @@ bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection, FVec
 		HitLocation = HitResult.Location;
 		return true;
 	}
-	
+
 	HitLocation = FVector(0);
 	return false;
 }
